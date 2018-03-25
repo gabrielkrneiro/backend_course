@@ -1,0 +1,40 @@
+{
+  "name": "student",
+  "plural": "students",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "stu_name": {
+      "type": "string",
+      "required": true
+    },
+    "stu_phone": {
+      "type": "string",
+      "required": true
+    },
+    "stu_enroll": {
+      "type": "integer",
+      "required": true
+    },
+    "stu_cla_id": {
+      "type": "integer",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "classes": {
+      "type": "belongsTo",
+      "model": "class",
+      "foreignKey": "stu_cla_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

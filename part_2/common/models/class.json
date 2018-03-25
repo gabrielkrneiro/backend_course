@@ -1,0 +1,37 @@
+{
+  "name": "class",
+  "plural": "classes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cla_name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "students": {
+      "type": "hasMany",
+      "model": "student",
+      "foreignKey": "stu_cla_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "professors": {
+      "type": "hasMany",
+      "model": "professor",
+      "foreignKey": "cla_id",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "professor_class"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

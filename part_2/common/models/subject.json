@@ -1,0 +1,36 @@
+{
+  "name": "subject",
+  "plural": "subjects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sub_name": {
+      "type": "string",
+      "required": true
+    },
+    "sub_short": {
+      "type": "string",
+      "required": true
+    },
+    "sub_workload": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "professors": {
+      "type": "hasOne",
+      "model": "professor",
+      "foreignKey": "pro_sub_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

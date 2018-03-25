@@ -1,0 +1,41 @@
+{
+  "name": "professor",
+  "plural": "professors",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pro_name": {
+      "type": "string",
+      "required": true
+    },
+    "pro_sub_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "subjects": {
+      "type": "belongsTo",
+      "model": "subject",
+      "foreignKey": "pro_sub_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "classes": {
+      "type": "hasMany",
+      "model": "class",
+      "foreignKey": "pro_id",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "professor_class"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
