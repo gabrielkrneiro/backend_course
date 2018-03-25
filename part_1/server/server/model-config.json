@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "author": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "book": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "bookstore": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "catalog": {
+    "dataSource": "mysql",
+    "public": true
+  }
+}

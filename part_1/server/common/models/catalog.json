@@ -1,0 +1,40 @@
+{
+  "name": "catalog",
+  "plural": "catalogs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "book_id": {
+      "type": "number",
+      "required": true
+    },
+    "books_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "book": {
+      "type": "belongsTo",
+      "model": "book",
+      "foreignKey": "book_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bookstore": {
+      "type": "belongsTo",
+      "model": "bookstore",
+      "foreignKey": "books_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

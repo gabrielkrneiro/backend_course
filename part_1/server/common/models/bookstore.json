@@ -1,0 +1,33 @@
+{
+  "name": "bookstore",
+  "plural": "bookstores",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "books_name": {
+      "type": "string",
+      "required": true
+    },
+    "books_address": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "books": {
+      "type": "hasMany",
+      "model": "book",
+      "foreignKey": "books_id",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "catalog"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

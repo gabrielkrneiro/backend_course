@@ -1,0 +1,41 @@
+{
+  "name": "book",
+  "plural": "books",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "boo_title": {
+      "type": "string",
+      "required": true
+    },
+    "boo_aut_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "author": {
+      "type": "belongsTo",
+      "model": "author",
+      "foreignKey": "boo_aut_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "bookstores": {
+      "type": "hasMany",
+      "model": "bookstore",
+      "foreignKey": "book_id",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "catalog"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

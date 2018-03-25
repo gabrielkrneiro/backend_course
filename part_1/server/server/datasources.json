@@ -1,0 +1,12 @@
+{
+  "mysql": {
+    "host": "localhost",
+    "port": 80,
+    "url": "mysql://root:dbaunlocked28@localhost/backend_course_1",
+    "database": "backend_course_1",
+    "password": "dbaunlocked28",
+    "name": "mysql",
+    "user": "root",
+    "connector": "mysql"
+  }
+}
